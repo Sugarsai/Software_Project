@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Participant Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-700 to-purple-800 text-white min-h-screen font-sans">
+
+<nav class="bg-white text-indigo-700 py-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center px-4">
+        <h1 class="text-2xl font-bold">Participant Dashboard</h1>
+        <button id="logoutBtn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Logout</button>
+    </div>
+</nav>
+
+<main class="container mx-auto mt-10 px-4">
+    <div class="bg-white/10 p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6 text-center">Welcome, <span id="userFullName"></span>!</h2>
+        <div class="space-y-4">
+            <p><strong>Email:</strong> <span id="userEmail"></span></p>
+            <p><strong>User Type:</strong> <span id="userType"></span></p>
+            <p><strong>First Name:</strong> <span id="userFirstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="userLastName"></span></p>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const email = sessionStorage.getItem("email");  // Assume stored during login
+      if (!email) {
+        window.location.href = "/api/auth/login";
+        return;
+      }
+
+      try {
+        const res = await fetch(`users/email/${email}`); // You may need to add this endpoint
+        if (!res.ok) throw new Error("Failed to fetch user data");
+        const user = await res.json();
+
+        document.getElementById("userFullName").textContent = `${user.firstName} ${user.lastName}`;
+        document.getElementById("userEmail").textContent = user.email;
+        document.getElementById("userType").textContent = user.type;
+        document.getElementById("userFirstName").textContent = user.firstName;
+        document.getElementById("userLastName").textContent = user.lastName;
+      } catch (err) {
+        alert("Could not load user data.");
+        console.error(err);
+      }
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      sessionStorage.clear();
+      window.location.href = "/api/auth/login";
+    });
+</script>
+
+</body>
+</html>
