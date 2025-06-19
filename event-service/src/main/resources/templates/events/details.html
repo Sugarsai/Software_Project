@@ -10,179 +10,196 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(120deg, #2B4A8F 0%, #1A1A1A 80%);
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
             min-height: 100vh;
-            color: white;
+            color: #222;
         }
-
-        .glassmorphic-container {
-            background: rgba(255, 255, 255, 0.1);
+        .glass {
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
             backdrop-filter: blur(10px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.18);
         }
-
-        .header-icon {
-            transition: transform 0.3s ease;
+        .header-hero {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
-
-        .header-icon:hover {
-            transform: scale(1.2);
+        .header-hero .mascot {
+            font-size: 2.5rem;
+            animation: bounce 1.2s infinite alternate;
+            display: inline-block;
         }
-
-        .action-btn {
-            transition: transform 0.3s ease;
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-18px); }
         }
-
-        .action-btn:hover {
-            transform: scale(1.05);
+        .details-card {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 2rem 2rem;
         }
-
+        .event-title {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-bottom: 0.7em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            justify-content: center;
+        }
+        .info-row {
+            font-size: 1.1rem;
+            margin-bottom: 1.1em;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.7em;
+        }
         .status-badge {
-            padding: 0.25rem 0.5rem;
+            display: inline-block;
+            padding: 0.3em 1em;
             border-radius: 9999px;
-            font-size: 0.75rem;
+            font-size: 1em;
             font-weight: 600;
+            margin-bottom: 1.2em;
         }
-
         .status-badge.active {
-            background: rgba(34, 197, 94, 0.2);
+            background: rgba(34, 197, 94, 0.18);
             color: #22c55e;
         }
-
         .status-badge.canceled {
-            background: rgba(239, 68, 68, 0.2);
+            background: rgba(239, 68, 68, 0.18);
             color: #ef4444;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .details-actions {
+            display: flex;
+            gap: 1.2em;
+            margin-top: 2em;
+            justify-content: center;
         }
-
-        .animate-fadeIn {
-            animation: fadeIn 0.6s ease-out;
+        .action-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: #fff;
+            border: none;
+            border-radius: 9999px;
+            padding: 0.8em 2.2em;
+            font-size: 1.1em;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(255,107,107,0.10);
+            cursor: pointer;
+            transition: background 0.18s, transform 0.18s;
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
+        }
+        .action-btn:hover {
+            background: linear-gradient(135deg, #ff8e53, #ff6b6b);
+            transform: scale(1.07) rotate(-2deg);
+        }
+        .cancel-fab {
+            position: fixed;
+            bottom: 2.5rem;
+            left: 2.5rem;
+            background: #fff;
+            color: #ff6b6b;
+            border: none;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 24px rgba(255,107,107,0.18);
+            cursor: pointer;
+            transition: transform 0.2s;
+            z-index: 100;
+        }
+        .cancel-fab:hover {
+            background: #ff8e53;
+            color: #fff;
+            transform: scale(1.12) rotate(-8deg);
+        }
+        @media (max-width: 600px) {
+            .details-card { padding: 1.2rem 0.5rem 1rem 0.5rem; }
+            .header-hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
-<body class="p-8">
-<div class="max-w-3xl mx-auto">
-    <h1 id="eventTitle" class="text-4xl font-bold text-white mb-6 animate-fadeIn"></h1>
-
-    <div class="glassmorphic-container p-8 card-container">
-        <div class="mb-4 text-lg flex items-center">
-            <strong class="flex items-center">
-                <i class="fas fa-align-left mr-2 text-blue-500 header-icon"></i>Description:
-            </strong>
-            <span id="eventDescription" class="ml-2"></span>
-        </div>
-
-        <div class="mb-4 text-lg flex items-center">
-            <strong class="flex items-center">
-                <i class="fas fa-calendar-alt mr-2 text-blue-500 header-icon"></i>Date & Time:
-            </strong>
-            <span id="eventDateTime" class="ml-2"></span>
-        </div>
-
-        <div class="mb-4 text-lg flex items-center">
-            <strong class="flex items-center">
-                <i class="fas fa-map-marker-alt mr-2 text-blue-500 header-icon"></i>Location:
-            </strong>
-            <span id="eventLocation" class="ml-2"></span>
-        </div>
-
-        <div class="mb-4 text-lg flex items-center">
-            <strong class="flex items-center">
-                <i class="fas fa-chair mr-2 text-blue-500 header-icon"></i>Available Seats:
-            </strong>
-            <span id="eventAvailableSeats" class="ml-2"></span>
-        </div>
-
-        <div class="mb-4 text-lg flex items-center">
-            <strong class="flex items-center">
-                <i class="fas fa-users mr-2 text-blue-500 header-icon"></i>Max Seats:
-            </strong>
-            <span id="eventMaxSeats" class="ml-2"></span>
-        </div>
-
-        <div class="mt-8 flex space-x-4">
-            <a id="editButton" href="#" class="action-btn bg-blue-600 text-white py-3 px-8 rounded-lg font-medium inline-flex items-center">
-                <i class="fas fa-edit mr-2"></i>Edit Event
-            </a>
-            <button id="cancelButton" class="action-btn bg-red-600 text-white py-3 px-8 rounded-lg font-medium inline-flex items-center">
-                <i class="fas fa-trash-alt mr-2"></i>Cancel Event
-            </button>
+<body>
+    <div class="header-hero">
+        <span class="mascot">🎉</span>
+        <h1 class="text-4xl font-bold header-title" style="background: linear-gradient(90deg, #ff6b6b, #ff8e53); -webkit-background-clip: text; color: transparent; display:inline-block;">Event Details</h1>
+        <div style="margin-top:0.5em; color:#ff8e53; font-size:1.1em;">Here's what's happening! 📅</div>
+    </div>
+    <div class="glass details-card">
+        <div id="eventTitle" class="event-title"><span>Loading...</span></div>
+        <div id="eventStatus"></div>
+        <div class="info-row"><i class="fas fa-align-left"></i><span id="eventDescription"></span></div>
+        <div class="info-row"><i class="fas fa-calendar-alt"></i><span id="eventDateTime"></span></div>
+        <div class="info-row"><i class="fas fa-map-marker-alt"></i><span id="eventLocation"></span></div>
+        <div class="info-row"><i class="fas fa-chair"></i><span id="eventAvailableSeats"></span> seats available</div>
+        <div class="info-row"><i class="fas fa-users"></i><span id="eventMaxSeats"></span> max seats</div>
+        <div class="details-actions">
+            <button id="editButton" class="action-btn"><i class="fas fa-edit"></i>Edit Event</button>
+            <button id="cancelButton" class="action-btn" style="background: #fff; color: #ff6b6b;"><i class="fas fa-trash-alt"></i>Cancel Event</button>
         </div>
     </div>
-</div>
-
-<script>
-    // Function to format date
-    function formatDate(dateString) {
-        const options = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true };
-        return new Intl.DateTimeFormat('en-US', options).format(new Date(dateString));
-    }
-
-    // Function to fetch and display event details
-    async function loadEventDetails() {
-        try {
-            const eventId = window.location.pathname.split('/').pop();
-            const response = await fetch(`/events/api/events/${eventId}`, {
-                headers: { 'Accept': 'application/json' }
-            });
-            if (!response.ok) throw new Error('Failed to fetch event');
-            const event = await response.json();
-
-            // Debug: Log canceled value
-            console.log(`Event ${event.title}: canceled = ${event.canceled}, type = ${typeof event.canceled}`);
-
-            // Populate event details
-            document.getElementById('eventTitle').textContent = event.title || 'N/A';
-            document.getElementById('eventDescription').textContent = event.description || 'No description available';
-            document.getElementById('eventDateTime').textContent = formatDate(event.dateTime) || 'N/A';
-            document.getElementById('eventLocation').textContent = event.location || 'N/A';
-            document.getElementById('eventAvailableSeats').textContent = event.availableSeats ?? 'N/A';
-            document.getElementById('eventMaxSeats').textContent = event.maxSeats ?? 'N/A';
-
-            const isCanceled = event.canceled === true;
-            const statusClass = isCanceled ? 'canceled' : 'active';
-            const statusText = isCanceled ? 'Canceled' : 'Active';
-            const statusContainer = document.createElement('div');
-            statusContainer.classList.add('mb-4', 'text-lg', 'flex', 'items-center');
-            statusContainer.innerHTML = `
-                <strong class="flex items-center">
-                    <i class="fas fa-info-circle mr-2 text-blue-500 header-icon"></i>Status:
-                </strong>
-                <span class="status-badge ${statusClass} ml-2">${statusText}</span>
-            `;
-            document.querySelector('.card-container').insertBefore(statusContainer, document.querySelector('.mt-8'));
-
-            document.getElementById('editButton').href = `/events/events/${event.id}/edit`;
-
-            document.getElementById('cancelButton').addEventListener('click', async () => {
-                if (confirm('Are you sure you want to cancel this event?')) {
-                    try {
-                        const cancelResponse = await fetch(`/events/api/events/${eventId}`, {
-                            method: 'DELETE',
-                            headers: { 'Accept': 'application/json' }
-                        });
-                        if (!cancelResponse.ok) throw new Error('Failed to cancel event');
-                        alert('Event canceled successfully');
-                        window.location.href = '/events/events';
-                    } catch (error) {
-                        console.error('Error canceling event:', error);
-                        alert('Failed to cancel event. Please try again.');
-                    }
-                }
-            });
-        } catch (error) {
-            console.error('Error loading event:', error);
-            alert('Failed to load event details. Please try again later.');
+    <button class="cancel-fab" id="backBtn" title="Back to events!"><i class="fas fa-arrow-left"></i></button>
+    <script>
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true };
+            return new Intl.DateTimeFormat('en-US', options).format(new Date(dateString));
         }
-    }
-
-    // Load event details on page load
-    document.addEventListener('DOMContentLoaded', loadEventDetails);
-</script>
+        async function loadEventDetails() {
+            try {
+                const eventId = window.location.pathname.split('/').pop();
+                const response = await fetch(`/events/api/events/${eventId}`, { headers: { 'Accept': 'application/json' } });
+                if (!response.ok) throw new Error('Failed to fetch event');
+                const event = await response.json();
+                document.getElementById('eventTitle').innerHTML = `${event.title || 'N/A'} ${event.canceled ? '🚫' : '🎉'}`;
+                document.getElementById('eventDescription').textContent = event.description || 'No description available';
+                document.getElementById('eventDateTime').textContent = formatDate(event.dateTime) || 'N/A';
+                document.getElementById('eventLocation').textContent = event.location || 'N/A';
+                document.getElementById('eventAvailableSeats').textContent = event.availableSeats ?? 'N/A';
+                document.getElementById('eventMaxSeats').textContent = event.maxSeats ?? 'N/A';
+                const isCanceled = event.canceled === true;
+                const statusClass = isCanceled ? 'canceled' : 'active';
+                const statusText = isCanceled ? 'Canceled 😢' : 'Active 🎈';
+                document.getElementById('eventStatus').innerHTML = `<span class="status-badge ${statusClass}">${statusText}</span>`;
+                document.getElementById('editButton').onclick = function() {
+                    window.location = `/events/events/${event.id}/edit`;
+                };
+                document.getElementById('cancelButton').onclick = async function() {
+                    if (confirm('Are you sure you want to cancel this event?')) {
+                        try {
+                            const cancelResponse = await fetch(`/events/api/events/${eventId}`, {
+                                method: 'DELETE',
+                                headers: { 'Accept': 'application/json' }
+                            });
+                            if (!cancelResponse.ok) throw new Error('Failed to cancel event');
+                            alert('Event canceled successfully');
+                            window.location.href = '/events/events';
+                        } catch (error) {
+                            console.error('Error canceling event:', error);
+                            alert('Failed to cancel event. Please try again.');
+                        }
+                    }
+                };
+            } catch (error) {
+                console.error('Error loading event:', error);
+                alert('Failed to load event details. Please try again later.');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEventDetails();
+            document.getElementById('backBtn').addEventListener('click', function() {
+                window.location.href = '/events/events';
+            });
+        });
+    </script>
 </body>
 </html>

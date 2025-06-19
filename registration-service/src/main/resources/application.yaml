@@ -28,3 +28,12 @@ eureka:
 
 server:
   port: 8083
+
+logging:
+  file:
+    name: transactions/registration.log
+  level:
+    root: WARN
+    TransactionLogger: INFO
+  pattern:
+    file: "[%logger{20}]%msg%n"

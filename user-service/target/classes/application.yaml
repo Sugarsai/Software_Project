@@ -28,3 +28,15 @@ eureka:
 
 server:
   port: 8082
+
+
+logging:
+  file:
+    name: logs/userservice.log
+  level:
+    root: WARN
+    com.example.SE_Project: INFO
+    MethodLogger: INFO
+  pattern:
+    console: "[%logger{20}] %msg%n"
+    file: "[%logger{20}] %msg%n"

@@ -1,0 +1,13 @@
+[o.h.orm.deprecation]HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[o.h.orm.deprecation]HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration]spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[o.h.orm.deprecation]HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[o.h.orm.deprecation]HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration]spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[c.z.h.p.HikariPool]HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58m35s254ms772µs300ns).
+[o.h.orm.deprecation]HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[o.h.orm.deprecation]HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration]spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[o.h.orm.deprecation]HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[o.h.orm.deprecation]HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration]spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning

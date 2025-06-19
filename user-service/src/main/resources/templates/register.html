@@ -4,204 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         body {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 20px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        header h1 {
-            font-size: 2rem;
-            color: #1e3c72;
-            text-align: center;
             margin: 0;
-            font-weight: 600;
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 450px;
-            margin: 0 auto;
-            padding: 20px;
+        .glass {
+            background: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
-        .form-container {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            padding: 40px;
-            margin-top: 100px;
-            animation: fadeIn 0.8s ease-in-out;
+        .floating-shape {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(28px);
+            opacity: 0.22;
+            z-index: 0;
+            animation: float 8s ease-in-out infinite alternate;
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .form-container h2 {
-            font-size: 1.8rem;
-            color: #1e3c72;
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 8px;
-            display: block;
-        }
-        .input-group {
-            position: relative;
-        }
-        .input-group .form-control {
-            border-radius: 8px;
-            padding: 12px 12px 12px 45px;
-            border: 1px solid #ddd;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-        .input-group .form-control:focus {
-            border-color: #1e3c72;
-            box-shadow: 0 0 8px rgba(30, 60, 114, 0.2);
-        }
-        .input-group-prepend .input-group-text {
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-            border-right: none;
-            border-radius: 8px 0 0 8px;
-            padding: 12px;
-            color: #1e3c72;
-        }
-        .input-group-append .btn {
-            border-radius: 0 8px 8px 0;
-            border: 1px solid #ddd;
-            border-left: none;
-            background: #f5f5f5;
-            color: #1e3c72;
-            transition: background 0.3s ease;
-        }
-        .input-group-append .btn:hover {
-            background: #e0e0e0;
-        }
-        .btn-primary {
-            background: #1e3c72;
-            border: none;
-            border-radius: 8px;
-            padding: 12px;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background: #2a5298;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-        .text-center a {
-            color: #1e3c72;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .text-center a:hover {
-            color: #2a5298;
-            text-decoration: underline;
-        }
-        .alert-danger {
-            background: rgba(255, 75, 75, 0.2);
-            border: 1px solid rgba(255, 75, 75, 0.4);
-            border-radius: 8px;
-            padding: 10px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            color: #ff4b4b;
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-20px) scale(1.07); }
         }
     </style>
 </head>
-<body>
-<header>
-    <div class="container">
-        <h1>My App</h1>
-    </div>
-</header>
-<div class="container">
-    <div class="form-container">
-        <h2>Register</h2>
-        <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
-        <form id="registerForm">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                    </div>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                </div>
+<body class="relative min-h-screen flex flex-col justify-center items-center">
+    <!-- Floating Gradient Shapes -->
+    <div class="floating-shape bg-blue-200 w-80 h-80 top-[-60px] left-[-60px] animate-pulse"></div>
+    <div class="floating-shape bg-purple-200 w-56 h-56 bottom-[-40px] right-[-40px] animate-pulse delay-1000"></div>
+    <div class="floating-shape bg-blue-100 w-40 h-40 top-1/2 left-[-60px] animate-pulse delay-2000"></div>
+    <div class="floating-shape bg-indigo-100 w-32 h-32 bottom-20 right-1/2 animate-pulse delay-3000"></div>
+    <header class="glass w-full max-w-lg mx-auto mt-8 mb-4 py-4 px-8 flex items-center justify-center shadow-lg">
+        <span class="inline-block w-8 h-8 bg-gradient-to-tr from-blue-400 to-purple-300 rounded-full shadow mr-3"></span>
+        <h1 class="text-2xl font-extrabold text-blue-800 tracking-tight drop-shadow flex items-center gap-2"><i class="ph ph-user-plus text-indigo-500"></i> My App Registration</h1>
+    </header>
+    <div class="glass w-full max-w-lg mx-auto p-8 mt-4 mb-8 shadow-2xl flex flex-col items-center transition-transform duration-300 hover:scale-105">
+        <h2 class="text-2xl font-bold mb-6 text-blue-800 flex items-center gap-2"><i class="ph ph-user-circle-plus text-indigo-500"></i> Register</h2>
+        <div id="errorMessage" class="bg-red-100 text-red-700 px-4 py-2 rounded mb-4 w-full text-center text-sm font-semibold" style="display: none;"></div>
+        <form id="registerForm" class="w-full space-y-5">
+            <div class="relative">
+                <i class="ph ph-envelope-simple text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input type="email" id="email" name="email" placeholder="Email" required class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" />
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                    </div>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                            <i class="far fa-eye"></i>
-                        </button>
-                    </div>
-                </div>
+            <div class="relative">
+                <i class="ph ph-lock-key text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" />
+                <button type="button" id="togglePassword" class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-400 hover:text-blue-600 transition"><i class="ph ph-eye"></i></button>
             </div>
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                    </div>
-                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
-                </div>
+            <div class="relative">
+                <i class="ph ph-lock-key text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" />
             </div>
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    </div>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
-                </div>
+            <div class="relative">
+                <i class="ph ph-user text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" required class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" />
             </div>
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    </div>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
-                </div>
+            <div class="relative">
+                <i class="ph ph-user text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required class="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" />
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-emerald-400 text-white py-3 rounded-lg font-bold text-lg shadow-md hover:scale-105 hover:from-blue-600 hover:to-emerald-500 transition-transform duration-200 flex items-center justify-center gap-2"><i class="ph ph-user-plus"></i> Register</button>
         </form>
-        <p class="text-center mt-3">Already have an account? <a href="/login">Login here</a></p>
+        <p class="mt-6 text-center text-sm text-gray-500">Already have an account? <a href="/api/auth/login" class="text-blue-700 font-semibold hover:underline transition">Login here</a></p>
     </div>
-</div>
-<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
-<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script>
     // Password toggle functionality
     document.getElementById('togglePassword').addEventListener('click', function() {
@@ -209,15 +85,18 @@
         const eyeIcon = this.querySelector('i');
         if (passwordInput.type === 'password') {
             passwordInput.type = 'text';
-            eyeIcon.classList.remove('far', 'fa-eye');
-            eyeIcon.classList.add('far', 'fa-eye-slash');
+            eyeIcon.classList.remove('ph-eye');
+            eyeIcon.classList.add('ph-eye-slash');
         } else {
             passwordInput.type = 'password';
-            eyeIcon.classList.remove('far', 'fa-eye-slash');
-            eyeIcon.classList.add('far', 'fa-eye');
+            eyeIcon.classList.remove('ph-eye-slash');
+            eyeIcon.classList.add('ph-eye');
         }
     });
-
+</script>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
     // Form submission handling
     document.getElementById('registerForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Prevent default form submission
@@ -264,7 +143,7 @@
             if (response.ok) {
                 console.log('Registration successful:', data); // Debug log
                 alert('User registered successfully');
-                window.location.href = '/login';
+                window.location.href = '/api/auth/login';
             } else {
                 console.error('Registration failed:', data); // Debug log
                 errorMessage.textContent = data || 'Failed to register';

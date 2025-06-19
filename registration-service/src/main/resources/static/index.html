@@ -3,46 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events and Participants</title>
+    <title>Events & Participants</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            min-height: 100vh;
+            color: #222;
             margin: 0;
             padding: 0;
         }
-        .container {
+        .header-hero {
+            text-align: center;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .header-hero .mascot {
+            font-size: 2.5rem;
+            animation: bounce 1.2s infinite alternate;
+            display: inline-block;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-18px); }
+        }
+        .main-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 1rem 2rem 1rem;
         }
-        h1 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
-        .event-card {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .glass-card {
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.18);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.03) rotate(-1deg);
+            box-shadow: 0 8px 32px rgba(255,107,107,0.18);
         }
         .event-title {
             font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin-bottom: 0.3em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
         }
         .event-date {
             color: #666;
             margin-bottom: 1rem;
+            font-size: 1.05rem;
         }
         .participants-header {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: #333;
+            color: #5b86e5;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4em;
         }
         ul {
             list-style-type: disc;
@@ -59,13 +94,19 @@
         }
         .loading, .error {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 60vh;
             font-size: 1.2rem;
         }
         .loading {
             color: #666;
+        }
+        .loading-emoji {
+            font-size: 2.5rem;
+            animation: bounce 1.2s infinite alternate;
+            margin-bottom: 0.5em;
         }
         .error {
             color: #d32f2f;
@@ -73,102 +114,97 @@
         .no-events {
             text-align: center;
             color: #666;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            margin-top: 2em;
+        }
+        @media (max-width: 600px) {
+            .event-grid { gap: 1rem; }
+            .glass-card { padding: 1.2rem 0.7rem 1rem 0.7rem; }
+            .header-hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-<div id="root" class="loading">
-    <p>Loading events...</p>
-</div>
-<script>
-    console.log('Starting JavaScript application');
-    const root = document.getElementById('root');
-
-    function renderContent(content) {
-        root.innerHTML = content;
-        root.className = '';
-    }
-
-    function renderError(message) {
-        console.error('Error:', message);
-        renderContent(`
-            <div class="error">
-                <p>Error: ${message}</p>
-            </div>
-        `);
-    }
-
-    function renderEvents(events) {
-        console.log('Rendering events:', events);
-        if (!Array.isArray(events) || events.length === 0) {
+    <div class="header-hero">
+        <span class="mascot">🧑‍🤝‍🧑</span>
+        <h1 class="text-4xl font-bold header-title" style="background: linear-gradient(90deg, #ff6b6b, #ff8e53); -webkit-background-clip: text; color: transparent; display:inline-block;">Events & Participants</h1>
+        <div style="margin-top:0.5em; color:#ff8e53; font-size:1.1em;">See who're joining the fun! 🎊</div>
+    </div>
+    <div id="root" class="main-container loading">
+        <div class="loading-emoji">⏳</div>
+        <p>Loading events...</p>
+    </div>
+    <script>
+        const root = document.getElementById('root');
+        function renderContent(content) {
+            root.innerHTML = content;
+            root.className = 'main-container';
+        }
+        function renderError(message) {
             renderContent(`
-                <div class="container">
-                    <h1>Events and Participants</h1>
-                    <p class="no-events">No events found.</p>
+                <div class="error">
+                    <div style="font-size:2.5rem;">❌</div>
+                    <p>Error: ${message}</p>
                 </div>
             `);
-            return;
         }
-
-        let eventsHtml = events.map((item, index) => {
-            const event = item.event || {};
-            const participants = Array.isArray(item.participants) ? item.participants : [];
-            const eventId = event.id || `event-${index}`;
-            const eventName = event.title || 'Unnamed Event';
-            const eventDate = event.dateTime || 'Unknown Date';
-
-            const participantsHtml = participants.length > 0 ? `
-                <ul>
-                    ${participants.map((participant, pIndex) => {
-                        const participantId = participant.id || `participant-${pIndex}`;
-                        const participantName = `${participant.firstName || ''} ${participant.lastName || ''}`.trim() || 'Unnamed Participant';
-                        const participantEmail = participant.email || 'No Email';
-                        return `<li key="${participantId}">${participantName} (${participantEmail})</li>`;
-                    }).join('')}
-                </ul>
-            ` : `<p class="no-participants">No participants registered.</p>`;
-
-            return `
-                <div key="${eventId}" class="event-card">
-                    <h2 class="event-title">${eventName}</h2>
-                    <p class="event-date">Date: ${eventDate}</p>
-                    <h3 class="participants-header">Participants:</h3>
-                    ${participantsHtml}
-                </div>
-            `;
-        }).join('');
-
-        renderContent(`
-            <div class="container">
-                <h1>Events and Participants</h1>
-                <div>${eventsHtml}</div>
-            </div>
-        `);
-    }
-
-    // Fetch events from the registration service via API Gateway
-    console.log('Initiating fetch to /api/registrations/events');
-    fetch('/api/registrations/events', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-        .then(response => {
-            console.log('Fetch response status:', response.status);
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+        function renderEvents(events) {
+            if (!Array.isArray(events) || events.length === 0) {
+                renderContent(`
+                    <div class="no-events">
+                        <div style="font-size:2.5rem;">😶‍🌫️</div>
+                        <p>No events found.<br><span style="color:#ff8e53;">Create an event and invite your friends!</span></p>
+                    </div>
+                `);
+                return;
             }
-            return response.json();
+            let eventsHtml = events.map((item, index) => {
+                const event = item.event || {};
+                const participants = Array.isArray(item.participants) ? item.participants : [];
+                const eventId = event.id || `event-${index}`;
+                const eventName = event.title || 'Unnamed Event';
+                const eventDate = event.dateTime || 'Unknown Date';
+                const participantsHtml = participants.length > 0 ? `
+                    <ul>
+                        ${participants.map((participant, pIndex) => {
+                            const participantId = participant.id || `participant-${pIndex}`;
+                            const participantName = `${participant.firstName || ''} ${participant.lastName || ''}`.trim() || 'Unnamed Participant';
+                            const participantEmail = participant.email || 'No Email';
+                            return `<li key="${participantId}"><i class='fas fa-user' style='color:#5b86e5; margin-right:0.3em;'></i> ${participantName} <span style='color:#aaa;font-size:0.95em;'>(${participantEmail})</span></li>`;
+                        }).join('')}
+                    </ul>
+                ` : `<p class="no-participants">No participants registered yet. Be the first! 🎉</p>`;
+                return `
+                    <div key="${eventId}" class="glass-card">
+                        <div class="event-title">${eventName} <span>🎫</span></div>
+                        <div class="event-date"><i class="fas fa-calendar-alt"></i> ${eventDate}</div>
+                        <div class="participants-header"><i class="fas fa-users"></i> Participants:</div>
+                        ${participantsHtml}
+                    </div>
+                `;
+            }).join('');
+            renderContent(`
+                <div class="event-grid">
+                    ${eventsHtml}
+                </div>
+            `);
+        }
+        fetch('/api/registrations/events', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
         })
-        .then(data => {
-            console.log('Raw API response:', data);
-            renderEvents(data);
-        })
-        .catch(err => {
-            renderError(err.message);
-        });
-</script>
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                renderEvents(data);
+            })
+            .catch(err => {
+                renderError(err.message);
+            });
+    </script>
 </body>
 </html>

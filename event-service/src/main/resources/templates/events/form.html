@@ -10,234 +10,261 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(120deg, #2B4A8F 0%, #1A1A1A 80%);
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
             min-height: 100vh;
-            color: white;
+            color: #222;
         }
-
-        .glassmorphic-container {
-            background: rgba(255, 255, 255, 0.1);
+        .glass {
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
             backdrop-filter: blur(10px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.18);
         }
-
-        .header-icon {
-            transition: transform 0.3s ease;
+        .header-hero {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
-
-        .header-icon:hover {
-            transform: scale(1.2);
+        .header-hero .mascot {
+            font-size: 2.5rem;
+            animation: bounce 1.2s infinite alternate;
+            display: inline-block;
         }
-
-        .form-input {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-18px); }
         }
-
-        .form-input:focus {
+        .form-card {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 2rem 2rem;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #ff6b6b;
+            font-size: 1.1rem;
+            margin-bottom: 0.2em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .form-input, .form-textarea {
+            background: rgba(255,255,255,0.5);
+            border: none;
+            color: #333;
+            border-radius: 12px;
+            width: 100%;
+            padding: 0.9em 1.1em;
+            margin-bottom: 1.1em;
+            font-size: 1.05em;
+            box-shadow: 0 2px 8px rgba(255,107,107,0.07);
+            transition: box-shadow 0.18s;
+        }
+        .form-input:focus, .form-textarea:focus {
             outline: none;
-            border-color: #FF6B6B;
+            box-shadow: 0 4px 16px rgba(255,107,107,0.18);
         }
-
-        .form-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+        .form-textarea {
+            min-height: 90px;
+            resize: vertical;
         }
-
+        .form-checkbox {
+            width: 1.2em;
+            height: 1.2em;
+            accent-color: #ff8e53;
+            margin-right: 0.5em;
+        }
+        .form-actions {
+            display: flex;
+            gap: 1.2em;
+            margin-top: 1.5em;
+            justify-content: flex-end;
+        }
         .submit-btn {
-            background: linear-gradient(to right, #FF6B6B, #FF8E53);
-            transition: transform 0.3s ease;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: #fff;
+            border: none;
+            border-radius: 9999px;
+            padding: 0.8em 2.2em;
+            font-size: 1.1em;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(255,107,107,0.10);
+            cursor: pointer;
+            transition: background 0.18s, transform 0.18s;
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
         }
-
         .submit-btn:hover {
-            transform: scale(1.05);
+            background: linear-gradient(135deg, #ff8e53, #ff6b6b);
+            transform: scale(1.07) rotate(-2deg);
         }
-
-        .cancel-btn {
-            background: rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
+        .cancel-fab {
+            position: fixed;
+            bottom: 2.5rem;
+            left: 2.5rem;
+            background: #fff;
+            color: #ff6b6b;
+            border: none;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 24px rgba(255,107,107,0.18);
+            cursor: pointer;
+            transition: transform 0.2s;
+            z-index: 100;
         }
-
-        .cancel-btn:hover {
-            transform: scale(1.05);
+        .cancel-fab:hover {
+            background: #ff8e53;
+            color: #fff;
+            transform: scale(1.12) rotate(-8deg);
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-fadeIn {
-            animation: fadeIn 0.6s ease-out;
+        @media (max-width: 600px) {
+            .form-card { padding: 1.2rem 0.5rem 1rem 0.5rem; }
+            .header-hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
-<body class="p-8">
-<div class="max-w-3xl mx-auto">
-    <h1 id="formTitle" class="text-4xl font-bold text-white mb-6 animate-fadeIn">Create Event</h1>
+<body>
+    <div class="header-hero">
+        <span class="mascot">📝</span>
+        <h1 id="formTitle" class="text-4xl font-bold header-title" style="background: linear-gradient(90deg, #ff6b6b, #ff8e53); -webkit-background-clip: text; color: transparent; display:inline-block;">Create Event</h1>
+        <div style="margin-top:0.5em; color:#ff8e53; font-size:1.1em;">Let's make something awesome! 🚀</div>
+    </div>
+    <div class="glass form-card">
+        <form id="eventForm">
+            <label for="title" class="form-label"><i class="fas fa-heading"></i>Title</label>
+            <input type="text" id="title" name="title" required class="form-input" placeholder="e.g. Karaoke Night">
 
-    <div class="glassmorphic-container p-8">
-        <form id="eventForm" class="space-y-6">
-            <div>
-                <label for="title" class="block text-lg font-medium text-white">
-                    <i class="fas fa-heading mr-2 text-blue-500 header-icon"></i>Title
-                </label>
-                <input type="text" id="title" name="title" required
-                       class="form-input mt-1 block w-full py-3 px-4 rounded-lg placeholder-white/70">
-            </div>
+            <label for="description" class="form-label"><i class="fas fa-align-left"></i>Description</label>
+            <textarea id="description" name="description" class="form-textarea" placeholder="Tell us about your event..."></textarea>
 
-            <div>
-                <label for="description" class="block text-lg font-medium text-white">
-                    <i class="fas fa-align-left mr-2 text-blue-500 header-icon"></i>Description
-                </label>
-                <textarea id="description" name="description"
-                          class="form-input mt-1 block w-full py-3 px-4 rounded-lg placeholder-white/70 h-32"></textarea>
-            </div>
+            <label for="dateTime" class="form-label"><i class="fas fa-calendar-alt"></i>Date & Time</label>
+            <input type="datetime-local" id="dateTime" name="dateTime" required class="form-input">
 
-            <div>
-                <label for="dateTime" class="block text-lg font-medium text-white">
-                    <i class="fas fa-calendar-alt mr-2 text-blue-500 header-icon"></i>Date & Time
-                </label>
-                <input type="datetime-local" id="dateTime" name="dateTime" required
-                       class="form-input mt-1 block w-full py-3 px-4 rounded-lg">
-            </div>
+            <label for="location" class="form-label"><i class="fas fa-map-marker-alt"></i>Location</label>
+            <input type="text" id="location" name="location" required class="form-input" placeholder="e.g. Main Hall">
 
-            <div>
-                <label for="location" class="block text-lg font-medium text-white">
-                    <i class="fas fa-map-marker-alt mr-2 text-blue-500 header-icon"></i>Location
-                </label>
-                <input type="text" id="location" name="location" required
-                       class="form-input mt-1 block w-full py-3 px-4 rounded-lg placeholder-white/70">
-            </div>
+            <label for="availableSeats" class="form-label"><i class="fas fa-chair"></i>Available Seats</label>
+            <input type="number" id="availableSeats" name="availableSeats" required min="0" class="form-input" placeholder="e.g. 50">
 
-            <div>
-                <label for="availableSeats" class="block text-lg font-medium text-white">
-                    <i class="fas fa-chair mr-2 text-blue-500 header-icon"></i>Available Seats
-                </label>
-                <input type="number" id="availableSeats" name="availableSeats" required min="0"
-                       class="form-input mt-1 block w-full py-3 px-4 rounded-lg">
-            </div>
+            <label for="maxSeats" class="form-label"><i class="fas fa-users"></i>Max Seats</label>
+            <input type="number" id="maxSeats" name="maxSeats" required min="1" class="form-input" placeholder="e.g. 100">
 
-            <div>
-                <label for="maxSeats" class="block text-lg font-medium text-white">
-                    <i class="fas fa-users mr-2 text-blue-500 header-icon"></i>Max Seats
-                </label>
-                <input type="number" id="maxSeats" name="maxSeats" required min="1"
-                       class="form-input mt-1 block w-full py-3 px-4 rounded-lg">
-            </div>
+            <label for="canceled" class="form-label"><input type="checkbox" id="canceled" name="canceled" class="form-checkbox">Canceled</label>
 
-            <div>
-                <label for="canceled" class="block text-lg font-medium text-white">
-                    <i class="fas fa-ban mr-2 text-blue-500 header-icon"></i>Canceled
-                </label>
-                <input type="checkbox" id="canceled" name="canceled"
-                       class="mt-1 h-5 w-5 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
-            </div>
-
-            <div class="flex space-x-4">
-                <button type="submit" class="submit-btn text-white py-3 px-8 rounded-lg font-medium inline-flex items-center">
-                    <i class="fas fa-save mr-2"></i>Save Event
-                </button>
-                <a href="/events" class="cancel-btn text-white py-3 px-8 rounded-lg font-medium inline-flex items-center">
-                    <i class="fas fa-times mr-2"></i>Cancel
-                </a>
+            <div class="form-actions">
+                <button type="submit" class="submit-btn"><i class="fas fa-save"></i>Save Event</button>
             </div>
         </form>
     </div>
-</div>
-
-<script>
-    // Function to format date for datetime-local input
-    function formatDateForInput(dateString) {
-        if (!dateString) return '';
-        const date = new Date(dateString);
-        return date.toISOString().slice(0, 16); // e.g., 2025-04-29T15:00
-    }
-
-    // Function to load event data for editing
-    async function loadEventData() {
-        const path = window.location.pathname;
-        const isEdit = path.includes('/edit');
-        const formTitle = document.getElementById('formTitle');
-        formTitle.textContent = isEdit ? 'Edit Event' : 'Create Event';
-
-        if (isEdit) {
+    <button class="cancel-fab" id="cancelBtn" title="Cancel and go back!"><i class="fas fa-times"></i></button>
+    <script>
+        // Function to format date for datetime-local input
+        function formatDateForInput(dateString) {
+            if (!dateString) return '';
+            const date = new Date(dateString);
+            return date.toISOString().slice(0, 16);
+        }
+        async function fetchUserId(email) {
             try {
-                // Extract eventId from /events/{id}/edit or /events/api/events/{id}/edit
-                const segments = path.split('/');
-                const eventId = segments[segments.length - 2];
-                const response = await fetch(`/events/api/events/${eventId}`, {
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (!response.ok) throw new Error('Failed to fetch event');
-                const event = await response.json();
-
-                // Debug: Log canceled value
-                console.log(`Event ${event.title}: canceled = ${event.canceled}, type = ${typeof event.canceled}`);
-
-                // Populate form fields
-                document.getElementById('title').value = event.title || '';
-                document.getElementById('description').value = event.description || '';
-                document.getElementById('dateTime').value = formatDateForInput(event.dateTime);
-                document.getElementById('location').value = event.location || '';
-                document.getElementById('availableSeats').value = event.availableSeats ?? '';
-                document.getElementById('maxSeats').value = event.maxSeats ?? '';
-                document.getElementById('canceled').checked = event.canceled === true;
+                const response = await fetch(`/api/auth/users/email/${email}`, { headers: { 'Accept': 'application/json' } });
+                if (!response.ok) throw new Error('Failed to fetch user data');
+                const user = await response.json();
+                return user.id;
             } catch (error) {
-                console.error('Error loading event:', error);
-                alert('Failed to load event data. Please try again later.');
+                console.error('Error fetching user ID:', error);
+                throw error;
             }
         }
-    }
-
-    // Function to handle form submission
-    async function handleFormSubmit(event) {
-        event.preventDefault();
-        const path = window.location.pathname;
-        const isEdit = path.includes('/edit');
-        let eventId;
-        if (isEdit) {
-            const segments = path.split('/');
-            eventId = segments[segments.length - 2];
+        async function loadEventData() {
+            const path = window.location.pathname;
+            const isEdit = path.includes('/edit');
+            const formTitle = document.getElementById('formTitle');
+            formTitle.textContent = isEdit ? 'Edit Event' : 'Create Event';
+            if (isEdit) {
+                try {
+                    const segments = path.split('/');
+                    const eventId = segments[segments.length - 2];
+                    const response = await fetch(`/events/api/events/${eventId}`, { headers: { 'Accept': 'application/json' } });
+                    if (!response.ok) throw new Error('Failed to fetch event');
+                    const event = await response.json();
+                    document.getElementById('title').value = event.title || '';
+                    document.getElementById('description').value = event.description || '';
+                    document.getElementById('dateTime').value = formatDateForInput(event.dateTime);
+                    document.getElementById('location').value = event.location || '';
+                    document.getElementById('availableSeats').value = event.availableSeats ?? '';
+                    document.getElementById('maxSeats').value = event.maxSeats ?? '';
+                    document.getElementById('canceled').checked = event.canceled === true;
+                } catch (error) {
+                    console.error('Error loading event:', error);
+                    alert('Failed to load event data. Please try again later.');
+                }
+            }
         }
-
-        const formData = {
-            title: document.getElementById('title').value,
-            description: document.getElementById('description').value,
-            dateTime: new Date(document.getElementById('dateTime').value).toISOString(),
-            location: document.getElementById('location').value,
-            availableSeats: parseInt(document.getElementById('availableSeats').value),
-            maxSeats: parseInt(document.getElementById('maxSeats').value),
-            canceled: document.getElementById('canceled').checked
-        };
-
-        try {
-            const url = isEdit ? `/events/api/events/${eventId}` : '/events/api/events';
-            const method = isEdit ? 'PUT' : 'POST';
-            const response = await fetch(url, {
-                method: method,
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(formData)
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const path = window.location.pathname;
+            const isEdit = path.includes('/edit');
+            let eventId;
+            if (isEdit) {
+                const segments = path.split('/');
+                eventId = segments[segments.length - 2];
+            }
+            const email = sessionStorage.getItem('email');
+            if (!email) {
+                alert('User not logged in. Please log in and try again.');
+                window.location.href = '/api/auth/login';
+                return;
+            }
+            let organizerId;
+            try {
+                organizerId = await fetchUserId(email);
+            } catch (error) {
+                alert('Failed to fetch user data. Please try again.');
+                return;
+            }
+            const formData = {
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                dateTime: new Date(document.getElementById('dateTime').value).toISOString(),
+                location: document.getElementById('location').value,
+                availableSeats: parseInt(document.getElementById('availableSeats').value),
+                maxSeats: parseInt(document.getElementById('maxSeats').value),
+                canceled: document.getElementById('canceled').checked,
+                organizerId: isEdit ? undefined : organizerId
+            };
+            try {
+                const url = isEdit ? `/events/api/events/${eventId}` : '/events/api/events';
+                const method = isEdit ? 'PUT' : 'POST';
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                if (!response.ok) throw new Error(`Failed to ${isEdit ? 'update' : 'create'} event`);
+                alert(`Event ${isEdit ? 'updated' : 'created'} successfully`);
+                window.location.href = '/events/events';
+            } catch (error) {
+                console.error(`Error ${isEdit ? 'updating' : 'creating'} event:`, error);
+                alert(`Failed to ${isEdit ? 'update' : 'create'} event. Please try again.`);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            loadEventData();
+            document.getElementById('eventForm').addEventListener('submit', handleFormSubmit);
+            document.getElementById('cancelBtn').addEventListener('click', function() {
+                window.location.href = '/events/events';
             });
-
-            if (!response.ok) throw new Error(`Failed to ${isEdit ? 'update' : 'create'} event`);
-            alert(`Event ${isEdit ? 'updated' : 'created'} successfully`);
-            window.location.href = '/events/events';
-        } catch (error) {
-            console.error(`Error ${isEdit ? 'updating' : 'creating'} event:`, error);
-            alert(`Failed to ${isEdit ? 'update' : 'create'} event. Please try again.`);
-        }
-    }
-
-    // Initialize form
-    document.addEventListener('DOMContentLoaded', () => {
-        loadEventData();
-        document.getElementById('eventForm').addEventListener('submit', handleFormSubmit);
-    });
-</script>
+        });
+    </script>
 </body>
 </html>

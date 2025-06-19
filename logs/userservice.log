@@ -1,0 +1,632 @@
+[MethodLogger] Entering method: StaticController.showLogin() | Args: []
+[MethodLogger] Method completed: StaticController.showLogin() | Result: login | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.login(..) | Args: [com.example.SE_Project.model.User@534f0c98]
+[MethodLogger] Entering method: UserService.validateLogin(..) | Args: [EV@EV, 1111]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@516db28f | Duration: 55 ms
+[MethodLogger] Method completed: UserService.validateLogin(..) | Result: true | Duration: 129 ms
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@516db28f | Duration: 0 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@516db28f | Duration: 15 ms
+[MethodLogger] Method completed: AuthRestController.login(..) | Result: <200 OK OK,{type=EventOrganizer, email=EV@EV},[]> | Duration: 144 ms
+[MethodLogger] Entering method: AuthRestController.getAllUsers() | Args: []
+[MethodLogger] Entering method: UserService.getAllUsers() | Args: []
+[MethodLogger] Entering method: ListCrudRepository.findAll() | Args: []
+[MethodLogger] Method completed: ListCrudRepository.findAll() | Result: [com.example.SE_Project.model.User@163c14b8, com.example.SE_Project.model.User@439cff88, com.example.SE_Project.model.User@68a8826b, com.example.SE_Project.model.User@59b541a6, com.example.SE_Project.model.User@2fda17fc] | Duration: 51 ms
+[MethodLogger] Method completed: UserService.getAllUsers() | Result: [com.example.SE_Project.model.User@163c14b8, com.example.SE_Project.model.User@439cff88, com.example.SE_Project.model.User@68a8826b, com.example.SE_Project.model.User@59b541a6, com.example.SE_Project.model.User@2fda17fc] | Duration: 51 ms
+[MethodLogger] Method completed: AuthRestController.getAllUsers() | Result: [com.example.SE_Project.model.User@163c14b8, com.example.SE_Project.model.User@439cff88, com.example.SE_Project.model.User@68a8826b, com.example.SE_Project.model.User@59b541a6, com.example.SE_Project.model.User@2fda17fc] | Duration: 51 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@1ce32a0 | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@1ce32a0 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@1ce32a0,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@29a8d824 | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@29a8d824 | Duration: 7 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@29a8d824,[]> | Duration: 7 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@2b0b5e9 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@2b0b5e9 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@2b0b5e9,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@5512fe96 | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@5512fe96 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@5512fe96,[]> | Duration: 7 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@1ebe019 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@1ebe019 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@1ebe019,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@2fdb2e31 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@2fdb2e31 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@2fdb2e31,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@5f24681f | Duration: 6 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@5f24681f | Duration: 8 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@5f24681f,[]> | Duration: 11 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@4ac9e872 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@4ac9e872 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@4ac9e872,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@1258a180 | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@1258a180 | Duration: 6 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@1258a180,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@cc798ac | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@cc798ac | Duration: 7 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@cc798ac,[]> | Duration: 9 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@3c1afa87 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@3c1afa87 | Duration: 7 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@3c1afa87,[]> | Duration: 9 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@10f58f0f | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@10f58f0f | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@10f58f0f,[]> | Duration: 3 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@68ccd2dd | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@68ccd2dd | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@68ccd2dd,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@1f27bd24 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@1f27bd24 | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@1f27bd24,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@1580ff4e | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@1580ff4e | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@1580ff4e,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@47cd071d | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@47cd071d | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@47cd071d,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@6769e370 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@6769e370 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@6769e370,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@13b38f49 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@13b38f49 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@13b38f49,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@5ef9d49f | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@5ef9d49f | Duration: 6 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@5ef9d49f,[]> | Duration: 6 ms
+[MethodLogger] Entering method: StaticController.showLogin() | Args: []
+[MethodLogger] Method completed: StaticController.showLogin() | Result: login | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.login(..) | Args: [com.example.SE_Project.model.User@2bf684a5]
+[MethodLogger] Entering method: UserService.validateLogin(..) | Args: [EV@EV, 1111]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@e60c956 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.validateLogin(..) | Result: true | Duration: 99 ms
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@e60c956 | Duration: 16 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@e60c956 | Duration: 31 ms
+[MethodLogger] Method completed: AuthRestController.login(..) | Result: <200 OK OK,{type=EventOrganizer, email=EV@EV},[]> | Duration: 131 ms
+[MethodLogger] Entering method: AuthRestController.getAllUsers() | Args: []
+[MethodLogger] Entering method: UserService.getAllUsers() | Args: []
+[MethodLogger] Entering method: ListCrudRepository.findAll() | Args: []
+[MethodLogger] Method completed: ListCrudRepository.findAll() | Result: [com.example.SE_Project.model.User@c4326da, com.example.SE_Project.model.User@56e718c0, com.example.SE_Project.model.User@52670f80, com.example.SE_Project.model.User@1d19ca27, com.example.SE_Project.model.User@8f94aa8] | Duration: 14 ms
+[MethodLogger] Method completed: UserService.getAllUsers() | Result: [com.example.SE_Project.model.User@c4326da, com.example.SE_Project.model.User@56e718c0, com.example.SE_Project.model.User@52670f80, com.example.SE_Project.model.User@1d19ca27, com.example.SE_Project.model.User@8f94aa8] | Duration: 15 ms
+[MethodLogger] Method completed: AuthRestController.getAllUsers() | Result: [com.example.SE_Project.model.User@c4326da, com.example.SE_Project.model.User@56e718c0, com.example.SE_Project.model.User@52670f80, com.example.SE_Project.model.User@1d19ca27, com.example.SE_Project.model.User@8f94aa8] | Duration: 16 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@374c0a03 | Duration: 16 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@374c0a03 | Duration: 18 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@374c0a03,[]> | Duration: 18 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@2f60e527 | Duration: 10 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@2f60e527 | Duration: 10 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@2f60e527,[]> | Duration: 11 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@7ac0cebe | Duration: 0 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@7ac0cebe | Duration: 0 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@7ac0cebe,[]> | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@76f0bf67 | Duration: 0 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@76f0bf67 | Duration: 0 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@76f0bf67,[]> | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@7811206d | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@7811206d | Duration: 21 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@7811206d,[]> | Duration: 22 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@43368679 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@43368679 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@43368679,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@7880c5d1 | Duration: 0 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@7880c5d1 | Duration: 0 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@7880c5d1,[]> | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@3cf4f0bd | Duration: 7 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@3cf4f0bd | Duration: 8 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@3cf4f0bd,[]> | Duration: 9 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@2eaf1faa | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@2eaf1faa | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@2eaf1faa,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@3614e701 | Duration: 0 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@3614e701 | Duration: 16 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@3614e701,[]> | Duration: 16 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@71a353a1 | Duration: 12 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@71a353a1 | Duration: 12 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@71a353a1,[]> | Duration: 13 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@4f930b4a | Duration: 0 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@4f930b4a | Duration: 0 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@4f930b4a,[]> | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@4051a0b3 | Duration: 16 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@4051a0b3 | Duration: 16 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@4051a0b3,[]> | Duration: 16 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@6cf1e73c | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@6cf1e73c | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@6cf1e73c,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@66953eb6 | Duration: 0 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@66953eb6 | Duration: 0 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@66953eb6,[]> | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@51760da7 | Duration: 16 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@51760da7 | Duration: 16 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@51760da7,[]> | Duration: 16 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@1ae646eb | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@1ae646eb | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@1ae646eb,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@1abfc99c | Duration: 0 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@1abfc99c | Duration: 0 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@1abfc99c,[]> | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.getAllUsers() | Args: []
+[MethodLogger] Entering method: UserService.getAllUsers() | Args: []
+[MethodLogger] Entering method: ListCrudRepository.findAll() | Args: []
+[MethodLogger] Method completed: ListCrudRepository.findAll() | Result: [com.example.SE_Project.model.User@24fd3d23, com.example.SE_Project.model.User@3874ddc3, com.example.SE_Project.model.User@6022afe, com.example.SE_Project.model.User@19de1d4d, com.example.SE_Project.model.User@54873f70] | Duration: 13 ms
+[MethodLogger] Method completed: UserService.getAllUsers() | Result: [com.example.SE_Project.model.User@24fd3d23, com.example.SE_Project.model.User@3874ddc3, com.example.SE_Project.model.User@6022afe, com.example.SE_Project.model.User@19de1d4d, com.example.SE_Project.model.User@54873f70] | Duration: 14 ms
+[MethodLogger] Method completed: AuthRestController.getAllUsers() | Result: [com.example.SE_Project.model.User@24fd3d23, com.example.SE_Project.model.User@3874ddc3, com.example.SE_Project.model.User@6022afe, com.example.SE_Project.model.User@19de1d4d, com.example.SE_Project.model.User@54873f70] | Duration: 16 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@42433cb2 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@42433cb2 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@42433cb2,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@7ae34318 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@7ae34318 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@7ae34318,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@30d8aec1 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@30d8aec1 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@30d8aec1,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@57f323cf | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@57f323cf | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@57f323cf,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@10fdfda7 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@10fdfda7 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@10fdfda7,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@db6e011 | Duration: 2 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@db6e011 | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@db6e011,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@6cd36f82 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@6cd36f82 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@6cd36f82,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@29aadf95 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@29aadf95 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@29aadf95,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@46e95cb9 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@46e95cb9 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@46e95cb9,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@4b9dd634 | Duration: 11 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@4b9dd634 | Duration: 12 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@4b9dd634,[]> | Duration: 12 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@cbeecc1 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@cbeecc1 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@cbeecc1,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@51438940 | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@51438940 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@51438940,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@48a55952 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@48a55952 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@48a55952,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@3b68c303 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@3b68c303 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@3b68c303,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@76f44d52 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@76f44d52 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@76f44d52,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@63939ef9 | Duration: 2 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@63939ef9 | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@63939ef9,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@29a16e6c | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@29a16e6c | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@29a16e6c,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@32c5a72c | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@32c5a72c | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@32c5a72c,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getAllUsers() | Args: []
+[MethodLogger] Entering method: UserService.getAllUsers() | Args: []
+[MethodLogger] Entering method: ListCrudRepository.findAll() | Args: []
+[MethodLogger] Method completed: ListCrudRepository.findAll() | Result: [com.example.SE_Project.model.User@61586d59, com.example.SE_Project.model.User@39378d57, com.example.SE_Project.model.User@7d45e580, com.example.SE_Project.model.User@4065c2d6, com.example.SE_Project.model.User@62755d26] | Duration: 9 ms
+[MethodLogger] Method completed: UserService.getAllUsers() | Result: [com.example.SE_Project.model.User@61586d59, com.example.SE_Project.model.User@39378d57, com.example.SE_Project.model.User@7d45e580, com.example.SE_Project.model.User@4065c2d6, com.example.SE_Project.model.User@62755d26] | Duration: 11 ms
+[MethodLogger] Method completed: AuthRestController.getAllUsers() | Result: [com.example.SE_Project.model.User@61586d59, com.example.SE_Project.model.User@39378d57, com.example.SE_Project.model.User@7d45e580, com.example.SE_Project.model.User@4065c2d6, com.example.SE_Project.model.User@62755d26] | Duration: 11 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@328db522 | Duration: 14 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@328db522 | Duration: 15 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@328db522,[]> | Duration: 15 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@43005333 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@43005333 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@43005333,[]> | Duration: 7 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@447d3c00 | Duration: 8 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@447d3c00 | Duration: 9 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@447d3c00,[]> | Duration: 10 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@7ad476b9 | Duration: 8 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@7ad476b9 | Duration: 9 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@7ad476b9,[]> | Duration: 10 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@7b596d2c | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@7b596d2c | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@7b596d2c,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@12405a53 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@12405a53 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@12405a53,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@6e56c567 | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@6e56c567 | Duration: 6 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@6e56c567,[]> | Duration: 8 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@63cee7db | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@63cee7db | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@63cee7db,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@4cc044ff | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@4cc044ff | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@4cc044ff,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@67fa99f | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@67fa99f | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@67fa99f,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@597b4cf | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@597b4cf | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@597b4cf,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@bd0ce5c | Duration: 6 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@bd0ce5c | Duration: 9 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@bd0ce5c,[]> | Duration: 9 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@178f58c6 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@178f58c6 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@178f58c6,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@2b4c8548 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@2b4c8548 | Duration: 6 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@2b4c8548,[]> | Duration: 7 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@68f36965 | Duration: 6 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@68f36965 | Duration: 7 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@68f36965,[]> | Duration: 8 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@479f1292 | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@479f1292 | Duration: 6 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@479f1292,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@5dcb6bf5 | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@5dcb6bf5 | Duration: 6 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@5dcb6bf5,[]> | Duration: 7 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@53f55be5 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@53f55be5 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@53f55be5,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getAllUsers() | Args: []
+[MethodLogger] Entering method: UserService.getAllUsers() | Args: []
+[MethodLogger] Entering method: ListCrudRepository.findAll() | Args: []
+[MethodLogger] Method completed: ListCrudRepository.findAll() | Result: [com.example.SE_Project.model.User@74088883, com.example.SE_Project.model.User@615005c8, com.example.SE_Project.model.User@3b11e727, com.example.SE_Project.model.User@3edca860, com.example.SE_Project.model.User@e2073a8] | Duration: 5 ms
+[MethodLogger] Method completed: UserService.getAllUsers() | Result: [com.example.SE_Project.model.User@74088883, com.example.SE_Project.model.User@615005c8, com.example.SE_Project.model.User@3b11e727, com.example.SE_Project.model.User@3edca860, com.example.SE_Project.model.User@e2073a8] | Duration: 7 ms
+[MethodLogger] Method completed: AuthRestController.getAllUsers() | Result: [com.example.SE_Project.model.User@74088883, com.example.SE_Project.model.User@615005c8, com.example.SE_Project.model.User@3b11e727, com.example.SE_Project.model.User@3edca860, com.example.SE_Project.model.User@e2073a8] | Duration: 7 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@1caf56d6 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@1caf56d6 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@1caf56d6,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@fef8572 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@fef8572 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@fef8572,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@77687e40 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@77687e40 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@77687e40,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@4dd890fe | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@4dd890fe | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@4dd890fe,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@5214aaad | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@5214aaad | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@5214aaad,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@e443795 | Duration: 2 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@e443795 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@e443795,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EV]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@62e9ae71 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@62e9ae71 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@62e9ae71,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [EV@EVw]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@d2fc39a | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@d2fc39a | Duration: 7 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@d2fc39a,[]> | Duration: 7 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Manager@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@2b1b9459 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@2b1b9459 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@2b1b9459,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@6a69009d | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@6a69009d | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@6a69009d,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [godzilla@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@2f66958a | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@2f66958a | Duration: 6 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@2f66958a,[]> | Duration: 7 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@7a375879 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@7a375879 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@7a375879,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@7a958903 | Duration: 4 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@7a958903 | Duration: 6 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@7a958903,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@25d81928 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@25d81928 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@25d81928,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@fb60150 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@fb60150 | Duration: 4 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@fb60150,[]> | Duration: 5 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@37538508 | Duration: 5 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@37538508 | Duration: 5 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@37538508,[]> | Duration: 6 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@322a502 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@322a502 | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@322a502,[]> | Duration: 4 ms
+[MethodLogger] Entering method: AuthRestController.getUserByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@3b5b6ae0 | Duration: 3 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@3b5b6ae0 | Duration: 3 ms
+[MethodLogger] Method completed: AuthRestController.getUserByEmail(..) | Result: <200 OK OK,com.example.SE_Project.model.User@3b5b6ae0,[]> | Duration: 5 ms
+[MethodLogger] Entering method: StaticController.showLogin() | Args: []
+[MethodLogger] Method completed: StaticController.showLogin() | Result: login | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.login(..) | Args: [com.example.SE_Project.model.User@7227494d]
+[MethodLogger] Entering method: UserService.validateLogin(..) | Args: [Ibrahim@gmail.com, 1111]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@12810d62 | Duration: 1 ms
+[MethodLogger] Method completed: UserService.validateLogin(..) | Result: true | Duration: 94 ms
+[MethodLogger] Entering method: UserService.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Entering method: UserRepository.findByEmail(..) | Args: [Ibrahim@gmail.com]
+[MethodLogger] Method completed: UserRepository.findByEmail(..) | Result: com.example.SE_Project.model.User@12810d62 | Duration: 15 ms
+[MethodLogger] Method completed: UserService.findByEmail(..) | Result: com.example.SE_Project.model.User@12810d62 | Duration: 15 ms
+[MethodLogger] Method completed: AuthRestController.login(..) | Result: <200 OK OK,{type=Participant, email=Ibrahim@gmail.com},[]> | Duration: 110 ms
+[MethodLogger] Entering method: StaticController.showIndex() | Args: []
+[MethodLogger] Method completed: StaticController.showIndex() | Result: index | Duration: 0 ms
+[MethodLogger] Entering method: StaticController.showDashboard() | Args: []
+[MethodLogger] Method completed: StaticController.showDashboard() | Result: dashboard | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.getAllUsers() | Args: []
+[MethodLogger] Entering method: UserService.getAllUsers() | Args: []
+[MethodLogger] Entering method: ListCrudRepository.findAll() | Args: []
+[MethodLogger] Method completed: ListCrudRepository.findAll() | Result: [com.example.SE_Project.model.User@4f1cfba7, com.example.SE_Project.model.User@713f77c6, com.example.SE_Project.model.User@73df4, com.example.SE_Project.model.User@636ecbb7, com.example.SE_Project.model.User@4b07c5be] | Duration: 16 ms
+[MethodLogger] Method completed: UserService.getAllUsers() | Result: [com.example.SE_Project.model.User@4f1cfba7, com.example.SE_Project.model.User@713f77c6, com.example.SE_Project.model.User@73df4, com.example.SE_Project.model.User@636ecbb7, com.example.SE_Project.model.User@4b07c5be] | Duration: 16 ms
+[MethodLogger] Method completed: AuthRestController.getAllUsers() | Result: [com.example.SE_Project.model.User@4f1cfba7, com.example.SE_Project.model.User@713f77c6, com.example.SE_Project.model.User@73df4, com.example.SE_Project.model.User@636ecbb7, com.example.SE_Project.model.User@4b07c5be] | Duration: 16 ms
+[MethodLogger] Entering method: StaticController.showIndex() | Args: []
+[MethodLogger] Method completed: StaticController.showIndex() | Result: index | Duration: 0 ms
+[MethodLogger] Entering method: StaticController.showDashboard() | Args: []
+[MethodLogger] Method completed: StaticController.showDashboard() | Result: dashboard | Duration: 0 ms
+[MethodLogger] Entering method: AuthRestController.getAllUsers() | Args: []
+[MethodLogger] Entering method: UserService.getAllUsers() | Args: []
+[MethodLogger] Entering method: ListCrudRepository.findAll() | Args: []
+[MethodLogger] Method completed: ListCrudRepository.findAll() | Result: [com.example.SE_Project.model.User@7a0a9126, com.example.SE_Project.model.User@136ab4ad, com.example.SE_Project.model.User@2301aceb, com.example.SE_Project.model.User@7b4b0250, com.example.SE_Project.model.User@55e62fbe] | Duration: 15 ms
+[MethodLogger] Method completed: UserService.getAllUsers() | Result: [com.example.SE_Project.model.User@7a0a9126, com.example.SE_Project.model.User@136ab4ad, com.example.SE_Project.model.User@2301aceb, com.example.SE_Project.model.User@7b4b0250, com.example.SE_Project.model.User@55e62fbe] | Duration: 15 ms
+[MethodLogger] Method completed: AuthRestController.getAllUsers() | Result: [com.example.SE_Project.model.User@7a0a9126, com.example.SE_Project.model.User@136ab4ad, com.example.SE_Project.model.User@2301aceb, com.example.SE_Project.model.User@7b4b0250, com.example.SE_Project.model.User@55e62fbe] | Duration: 15 ms

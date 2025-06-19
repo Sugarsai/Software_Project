@@ -5,48 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Participant Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+          font-family: 'Inter', sans-serif;
+          background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+          min-height: 100vh;
+          margin: 0;
+          overflow-x: hidden;
+        }
+        .glass {
+          background: rgba(255, 255, 255, 0.14);
+          box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border-radius: 18px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .floating-shape {
+          position: absolute;
+          border-radius: 9999px;
+          filter: blur(28px);
+          opacity: 0.22;
+          z-index: 0;
+          animation: float 8s ease-in-out infinite alternate;
+        }
+        @keyframes float {
+          0% { transform: translateY(0) scale(1); }
+          100% { transform: translateY(-20px) scale(1.07); }
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-indigo-700 to-purple-800 text-white min-h-screen font-sans">
+<body class="relative min-h-screen flex flex-col justify-center items-center">
+    <!-- Floating Gradient Shapes -->
+    <div class="floating-shape bg-blue-200 w-80 h-80 top-[-60px] left-[-60px] animate-pulse"></div>
+    <div class="floating-shape bg-purple-200 w-56 h-56 bottom-[-40px] right-[-40px] animate-pulse delay-1000"></div>
+    <div class="floating-shape bg-blue-100 w-40 h-40 top-1/2 left-[-60px] animate-pulse delay-2000"></div>
+    <div class="floating-shape bg-indigo-100 w-32 h-32 bottom-20 right-1/2 animate-pulse delay-3000"></div>
 
-<nav class="bg-white text-indigo-700 py-4 shadow-md">
-    <div class="container mx-auto flex justify-between items-center px-4">
-        <h1 class="text-2xl font-bold">Participant Dashboard</h1>
-        <button id="logoutBtn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Logout</button>
-    </div>
-</nav>
-
-<main class="container mx-auto mt-10 px-4">
-    <div class="bg-white/10 p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
-        <h2 class="text-2xl font-bold mb-6 text-center">Welcome, <span id="userFullName"></span>!</h2>
-        <div class="space-y-4">
-            <p><strong>Email:</strong> <span id="userEmail"></span></p>
-            <p><strong>User Type:</strong> <span id="userType"></span></p>
-            <p><strong>First Name:</strong> <span id="userFirstName"></span></p>
-            <p><strong>Last Name:</strong> <span id="userLastName"></span></p>
+    <!-- Navigation Bar -->
+    <nav class="glass fixed top-0 left-0 w-full z-20 flex justify-between items-center px-6 py-2 shadow-md border-b border-white/10">
+        <div class="flex items-center space-x-2">
+            <span class="inline-block w-7 h-7 bg-gradient-to-tr from-blue-400 to-purple-300 rounded-full shadow"></span>
+            <span class="text-xl font-extrabold text-blue-800 tracking-tight drop-shadow">Participant Dashboard</span>
         </div>
-    </div>
-</main>
+        <button id="logoutBtn" class="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-emerald-400 text-white px-4 py-1.5 rounded-md font-semibold shadow hover:from-blue-600 hover:to-emerald-500 transition text-sm">
+            <i class="ph ph-sign-out text-lg"></i> Logout
+        </button>
+    </nav>
+
+    <main class="w-full max-w-2xl mx-auto mt-28 mb-8 px-2 relative z-10">
+        <!-- User Info Card -->
+        <div class="glass p-6 rounded-2xl shadow-xl mb-6 flex flex-col items-center transition-transform duration-300 hover:scale-105">
+            <div class="flex flex-col items-center mb-4">
+                <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-blue-300 to-purple-200 shadow mb-2">
+                    <i class="ph ph-user-circle text-4xl text-blue-700"></i>
+                </span>
+                <h2 class="text-2xl font-bold mb-1 text-blue-800">Welcome, <span id="userFullName"></span>!</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-center">
+                <div class="flex flex-col items-center">
+                    <i class="ph ph-envelope-simple text-lg text-blue-400 mb-1"></i>
+                    <span class="text-xs text-gray-500 font-semibold">Email</span>
+                    <span id="userEmail" class="text-sm text-gray-700"></span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="ph ph-user text-lg text-blue-400 mb-1"></i>
+                    <span class="text-xs text-gray-500 font-semibold">First Name</span>
+                    <span id="userFirstName" class="text-sm text-gray-700"></span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="ph ph-user text-lg text-blue-400 mb-1"></i>
+                    <span class="text-xs text-gray-500 font-semibold">Last Name</span>
+                    <span id="userLastName" class="text-sm text-gray-700"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Booked Events Card -->
+        <div class="glass p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+            <div class="flex items-center gap-2 mb-4">
+                <i class="ph ph-calendar-check text-xl text-emerald-500"></i>
+                <h3 class="text-xl font-semibold text-blue-800">Your Booked Events</h3>
+            </div>
+            <ul id="bookedEvents" class="space-y-2">
+                <!-- Booked events will be loaded here -->
+            </ul>
+        </div>
+    </main>
 
 <script>
     document.addEventListener("DOMContentLoaded", async () => {
-      const email = sessionStorage.getItem("email");  // Assume stored during login
+      const email = sessionStorage.getItem("email"); // Assume stored during login
       if (!email) {
         window.location.href = "/api/auth/login";
         return;
       }
 
       try {
-        const res = await fetch(`users/email/${email}`); // You may need to add this endpoint
-        if (!res.ok) throw new Error("Failed to fetch user data");
-        const user = await res.json();
+        const res = await fetch("http://localhost:8080/api/registrations/participants");
+        if (!res.ok) throw new Error("Failed to fetch participant data");
+        const participants = await res.json();
 
-        document.getElementById("userFullName").textContent = `${user.firstName} ${user.lastName}`;
-        document.getElementById("userEmail").textContent = user.email;
-        document.getElementById("userType").textContent = user.type;
-        document.getElementById("userFirstName").textContent = user.firstName;
-        document.getElementById("userLastName").textContent = user.lastName;
+        // Find participant matching the logged-in email
+        const participantData = participants.find(p => p.participant.email === email);
+        if (!participantData) throw new Error("User not found");
+
+        const { participant, events } = participantData;
+
+        // Update user info
+        document.getElementById("userFullName").textContent = `${participant.firstName} ${participant.lastName}`;
+        document.getElementById("userEmail").textContent = participant.email;
+        document.getElementById("userFirstName").textContent = participant.firstName;
+        document.getElementById("userLastName").textContent = participant.lastName;
+
+        // Display booked events
+        const eventsList = document.getElementById("bookedEvents");
+        if (events.length === 0) {
+          eventsList.innerHTML = '<li class="text-gray-300 flex items-center gap-2"><i class="ph ph-info text-lg"></i>No events booked.</li>';
+        } else {
+          events.forEach(event => {
+            const li = document.createElement("li");
+            li.className = "bg-white/30 p-3 rounded-md flex items-center gap-3 shadow transition hover:bg-white/50 hover:scale-105 duration-200";
+            li.innerHTML = `
+              <i class='ph ph-calendar-blank text-blue-500 text-lg'></i>
+              <span class='font-semibold text-blue-800'>${event.title}</span>
+              <span class='text-xs text-gray-500 ml-auto'><i class='ph ph-clock text-gray-400'></i> ${new Date(event.dateTime).toLocaleString()}</span>
+            `;
+            eventsList.appendChild(li);
+          });
+        }
       } catch (err) {
-        alert("Could not load user data.");
+        alert("Could not load user data or events.");
         console.error(err);
       }
     });

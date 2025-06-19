@@ -41,6 +41,7 @@ public class RegistrationController {
             registration.setEventId(eventId);
             registration.setParticipantId(userId);
             registration.setRegistrationTime(LocalDateTime.now());
+            registrationRepository.decreaseAvailableSeats(eventId,1);
             registrationRepository.save(registration);
 
             return ResponseEntity.ok(Map.of("success", true, "message", "Successfully registered for event " + eventId));

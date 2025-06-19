@@ -3,74 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Event Organizer Registration</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
             min-height: 100vh;
             margin: 0;
+            overflow-x: hidden;
         }
-        .form-container {
-            background: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            width: 100%;
-            max-width: 550px;
+        .glass {
+            background: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
-        .form-container h2 {
-            text-align: center;
-            color: #0f2027;
-            margin-bottom: 30px;
-            font-weight: 600;
+        .floating-shape {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(28px);
+            opacity: 0.22;
+            z-index: 0;
+            animation: float 8s ease-in-out infinite alternate;
         }
-        .btn-primary {
-            background: #0f2027;
-            border: none;
-        }
-        .btn-primary:hover {
-            background: #203a43;
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-20px) scale(1.07); }
         }
     </style>
 </head>
-<body>
-<div class="form-container">
-    <h2>Event Organizer Registration</h2>
-    <div id="eoError" class="alert alert-danger" style="display: none;"></div>
-    <form id="eoForm">
-        <div class="form-group">
-            <label>Email</label>
-            <input class="form-control" id="eoEmail" type="email" required>
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input class="form-control" id="eoPassword" type="password" required>
-        </div>
-        <div class="form-group">
-            <label>Confirm Password</label>
-            <input class="form-control" id="eoConfirm" type="password" required>
-        </div>
-        <div class="form-group">
-            <label>First Name</label>
-            <input class="form-control" id="eoFirstName" type="text" required>
-        </div>
-        <div class="form-group">
-            <label>Last Name</label>
-            <input class="form-control" id="eoLastName" type="text" required>
-        </div>
-        <div class="form-group">
-            <label>Organization Name</label>
-            <input class="form-control" id="organization" type="text" required>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Register EO</button>
-    </form>
-</div>
-
+<body class="relative min-h-screen flex flex-col justify-center items-center">
+    <!-- Floating Gradient Shapes -->
+    <div class="floating-shape bg-blue-200 w-80 h-80 top-[-60px] left-[-60px] animate-pulse"></div>
+    <div class="floating-shape bg-purple-200 w-56 h-56 bottom-[-40px] right-[-40px] animate-pulse delay-1000"></div>
+    <div class="floating-shape bg-blue-100 w-40 h-40 top-1/2 left-[-60px] animate-pulse delay-2000"></div>
+    <div class="floating-shape bg-indigo-100 w-32 h-32 bottom-20 right-1/2 animate-pulse delay-3000"></div>
+    <div class="glass w-full max-w-lg mx-auto p-8 mt-16 mb-8 shadow-2xl flex flex-col items-center transition-transform duration-300 hover:scale-105">
+        <h2 class="text-2xl font-bold mb-6 text-blue-800 flex items-center gap-2"><i class="ph ph-user-gear text-indigo-500"></i> Event Organizer Registration</h2>
+        <div id="eoError" class="bg-red-100 text-red-700 px-4 py-2 rounded mb-4 w-full text-center text-sm font-semibold" style="display: none;"></div>
+        <form id="eoForm" class="w-full space-y-5">
+            <div class="relative">
+                <i class="ph ph-envelope-simple text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input class="form-control w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" id="eoEmail" type="email" placeholder="Email" required />
+            </div>
+            <div class="relative">
+                <i class="ph ph-lock-key text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input class="form-control w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" id="eoPassword" type="password" placeholder="Password" required />
+            </div>
+            <div class="relative">
+                <i class="ph ph-lock-key text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input class="form-control w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" id="eoConfirm" type="password" placeholder="Confirm Password" required />
+            </div>
+            <div class="relative">
+                <i class="ph ph-user text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input class="form-control w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" id="eoFirstName" type="text" placeholder="First Name" required />
+            </div>
+            <div class="relative">
+                <i class="ph ph-user text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input class="form-control w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" id="eoLastName" type="text" placeholder="Last Name" required />
+            </div>
+            <div class="relative">
+                <i class="ph ph-buildings text-lg text-blue-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                <input class="form-control w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 text-gray-800 transition shadow-sm" id="organization" type="text" placeholder="Organization Name" required />
+            </div>
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-emerald-400 text-white py-3 rounded-lg font-bold text-lg shadow-md hover:scale-105 hover:from-blue-600 hover:to-emerald-500 transition-transform duration-200 flex items-center justify-center gap-2"><i class="ph ph-user-gear"></i> Register EO</button>
+        </form>
+    </div>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script>
     document.getElementById('eoForm').addEventListener('submit', async function (e) {
         e.preventDefault();
